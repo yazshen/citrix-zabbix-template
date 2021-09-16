@@ -1,0 +1,126 @@
+zabbix_export:
+  version: '5.4'
+  date: '2021-09-16T09:27:47Z'
+  groups:
+    -
+      uuid: 36bff6c29af64692839d077febfc7079
+      name: 'Templates/Network devices'
+  templates:
+    -
+      uuid: ba8578ef844b44ef8460a0a741507160
+      template: Template-Citrix-SDWAN
+      name: Template-Citrix-SDWAN
+      description: |
+        Citrix SD-WAN Template
+        Software Release: 11.4.1
+        Author: Robbie Shen
+        Contact: yazhong.shen@citrix.com
+        Version: 0.1
+      groups:
+        -
+          name: 'Templates/Network devices'
+      items:
+        -
+          uuid: a626f5e337fd41a9abb6f32bf9d9649a
+          name: CPU-Usage
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.3845.31.4.2.2.12.1.16.0
+          key: sdWANStatsApplianceCpu
+          value_type: FLOAT
+          units: '%'
+        -
+          uuid: c6edf365ba0840f998cb6e447e2f755b
+          name: HAState
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.3845.31.4.2.2.12.1.9.0
+          key: sdWANStatsApplianceHAState
+          valuemap:
+            name: sdWANStatsApplianceHAState
+        -
+          uuid: 7476ec01d6bb4d62a721c5ea498a4530
+          name: Memory-Usage
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.3845.31.4.2.2.12.1.17.0
+          key: sdWANStatsApplianceMemory
+          value_type: FLOAT
+          units: '%'
+      discovery_rules:
+        -
+          uuid: 0215c968c1f54dbcae98027d310f2026
+          name: VirtualPathName
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE}, .1.3.6.1.4.1.3845.31.4.2.2.16.2.1.3]'
+          key: sdWANStatsVPathName
+          item_prototypes:
+            -
+              uuid: 804c560aa0e0408380f90b2001da3ec7
+              name: 'VirtualPath {#SNMPVALUE} ReceiveBOWT'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.4.1.3845.31.4.2.2.16.2.1.21.{#SNMPINDEX}'
+              key: 'sdWANStatsVPathReceiveBOWTms.[{#SNMPVALUE}]'
+              units: ms
+            -
+              uuid: 51c6c5ff556240f694159cbf4df0f458
+              name: 'VirtualPath {#SNMPVALUE} ReceiveJitter'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.4.1.3845.31.4.2.2.16.2.1.22.{#SNMPINDEX}'
+              key: 'sdWANStatsVPathReceiveJitterms.[{#SNMPVALUE}]'
+              units: ms
+            -
+              uuid: e585324358f04006a1f305a151ef4212
+              name: 'VirtualPath {#SNMPVALUE} SendBOWT'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.4.1.3845.31.4.2.2.16.2.1.15.{#SNMPINDEX}'
+              key: 'sdWANStatsVPathSendBOWTms.[{#SNMPVALUE}]'
+              units: ms
+            -
+              uuid: 3c7b517a3b7049979858f19d09e92dad
+              name: 'VirtualPath {#SNMPVALUE} SendJitter'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.4.1.3845.31.4.2.2.16.2.1.16.{#SNMPINDEX}'
+              key: 'sdWANStatsVPathSendJitterms.[{#SNMPVALUE}]'
+              units: ms
+            -
+              uuid: b867e3557f824989aa7646b262c2f76b
+              name: 'VirtualPath {#SNMPVALUE} Status'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.4.1.3845.31.4.2.2.16.2.1.4.{#SNMPINDEX}'
+              key: 'sdWANStatsVPathState.[{#SNMPVALUE}]'
+              valuemap:
+                name: sdWANStatsVPathState
+      valuemaps:
+        -
+          uuid: 0499b3b2067a4ec48e88bc576f505237
+          name: sdWANStatsApplianceHAState
+          mappings:
+            -
+              value: '0'
+              newvalue: undefined
+            -
+              value: '1'
+              newvalue: notConfigured
+            -
+              value: '2'
+              newvalue: active
+            -
+              value: '3'
+              newvalue: standby
+        -
+          uuid: b4f929de712d4ec68f017081562fad2b
+          name: sdWANStatsVPathState
+          mappings:
+            -
+              value: '0'
+              newvalue: undefined
+            -
+              value: '1'
+              newvalue: disabled
+            -
+              value: '2'
+              newvalue: dead
+            -
+              value: '3'
+              newvalue: bad
+            -
+              value: '4'
+              newvalue: good
