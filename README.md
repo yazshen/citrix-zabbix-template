@@ -1,1 +1,3 @@
-# citrix-zabbix-template
+# Zabbix Template for Citrix Products
+
+## Citrix SD-WAN
