@@ -1,0 +1,1 @@
+# citrix-zabbix-template
