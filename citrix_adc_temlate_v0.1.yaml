@@ -1,0 +1,405 @@
+zabbix_export:
+  version: '5.4'
+  date: '2021-09-20T11:42:31Z'
+  groups:
+    -
+      uuid: 36bff6c29af64692839d077febfc7079
+      name: 'Templates/Network devices'
+  templates:
+    -
+      uuid: aa8aa2fdd8424fc7bfa208eae40a86d7
+      template: Temlate-Citrix-ADC
+      name: Temlate-Citrix-ADC
+      description: |
+        Citrix ADC(Netscaler) Template
+        Software Release: 13.0-82.45
+        Author: Robbie Shen
+        Contact: yazhong.shen@citrix.com
+        Version: 0.1
+      groups:
+        -
+          name: 'Templates/Network devices'
+      items:
+        -
+          uuid: ac4aadd5aa394b99bb2d77d92c28e425
+          name: 'Hardware CPU0Temperature'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.15.67.80.85.48.84.101.109.112.101.114.97.116.117.114.101
+          key: CPU0Temperature
+          units: °C
+        -
+          uuid: 2c904bc395934eb98122901334a6dce0
+          name: 'Hardware CPU1Temperature'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.15.67.80.85.49.84.101.109.112.101.114.97.116.117.114.101
+          key: CPU1Temperature
+          units: °C
+        -
+          uuid: 472430853f33409cb26172d0aff95038
+          name: 'Hardware CPUFan0Speed'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.12.67.80.85.70.97.110.48.83.112.101.101.100
+          key: CPUFan0Speed
+        -
+          uuid: 26a55c004df54d2bb7044829433378e8
+          name: 'Hardware CPUFan1Speed'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.12.67.80.85.70.97.110.49.83.112.101.101.100
+          key: CPUFan1Speed
+        -
+          uuid: 823d1e8cbbd142c3a939dc1703ad02e9
+          name: 'Hardware Disk0Errors'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.11.68.105.115.107.48.69.114.114.111.114.115
+          key: Disk0Errors
+        -
+          uuid: 0c72f6b2e8ee49818f3acf59ebd73df2
+          name: 'Hardware Disk1Errors'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.11.68.105.115.107.49.69.114.114.111.114.115
+          key: Disk1Errors
+        -
+          uuid: 8eb84c7880b244c08433718daf31ca18
+          name: 'High Availability State'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.23.24.0
+          key: haCurState
+          valuemap:
+            name: HAState
+        -
+          uuid: af36bdcc5c9a40fc8f8d355d91f2859b
+          name: 'High Availability Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.23.23.0
+          key: haCurStatus
+          valuemap:
+            name: HAStatus
+        -
+          uuid: 104ea082af3449dd8cf715acb52f652f
+          name: 'High Availability Peer Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.23.3.0
+          key: haPeerState
+          valuemap:
+            name: HAPeerStatus
+        -
+          uuid: 0c6195bb9efb49d583c4aa9afd8a1c01
+          name: 'Performance HTTP RPS'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.48.76.0
+          key: httpTotRequestsRate
+        -
+          uuid: f534923af4ce49888095bd7084e8a3b2
+          name: 'Hardware PowerSupply1Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.18.80.111.119.101.114.83.117.112.112.108.121.49.83.116.97.116.117.115
+          key: PowerSupply1Status
+        -
+          uuid: 27ed688994d446cc973495d4fcf196e3
+          name: 'Hardware PowerSupply2Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.18.80.111.119.101.114.83.117.112.112.108.121.50.83.116.97.116.117.115
+          key: PowerSupply2Status
+        -
+          uuid: f93064982f784967a04f2e5e3c8b2f05
+          name: 'Hardware PowerSupply3Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.18.80.111.119.101.114.83.117.112.112.108.121.51.83.116.97.116.117.115
+          key: PowerSupply3Status
+        -
+          uuid: 47f85e7c183848c3bd1b9efadc13a1a5
+          name: 'Hardware PowerSupply4Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.18.80.111.119.101.114.83.117.112.112.108.121.52.83.116.97.116.117.115
+          key: PowerSupply4Status
+        -
+          uuid: d21f347533c2423d9302f60db51c3ba1
+          name: 'System Packet CPU Usage'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.1.0
+          key: resCpuUsage
+          value_type: FLOAT
+          units: '%'
+        -
+          uuid: c3c9afbdf9a2497581fa92913a7e44e9
+          name: 'System Memory Usage'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.2.0
+          key: resMemUsage
+          value_type: FLOAT
+          units: '%'
+        -
+          uuid: b55ad83854c54b6a9a755e6bf5e3e40d
+          name: 'SSL Cards'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.300.0
+          key: sslCards
+        -
+          uuid: 8fd76542b68945ada5cbaf857c44b09c
+          name: 'SSL Secondary Cards'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.368.0
+          key: sslCardsSecondary
+        -
+          uuid: e5a4bbc002bd40fb8f164e7d602bf0d4
+          name: 'SSL Card Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.1.0
+          key: sslCardStatus
+        -
+          uuid: 6d76aff9b73344c5a41f0d708e819452
+          name: 'SSL Secondary Card Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.369.0
+          key: sslCardStatusSecondary
+        -
+          uuid: 0e5a8bb9a02745c6bee74e921758b08b
+          name: 'System SSL Nitrox-3 Chips Usage'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.365.0
+          key: sslCryptoUtilization
+          units: '%'
+        -
+          uuid: d68c8d934c714021ae2e7da7a46707e9
+          name: 'System SSL Intel Crypto Chips Asymmetric Usage'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.404.0
+          key: sslCryptoUtilizationAsym
+          units: '%'
+        -
+          uuid: 0b20471bee5441f68227ed1c1c676d31
+          name: 'System SSL N3FIPS+N3 Hybrid Usage'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.370.0
+          key: sslCryptoUtilizationSecondary
+          units: '%'
+        -
+          uuid: 4e40a4437e914fff94f8de75831ed90a
+          name: 'System SSL Intel Crypto Chips Symmetric Usage'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.405.0
+          key: sslCryptoUtilizationSymm
+          units: '%'
+        -
+          uuid: 74af7c308b504dce8091349562ccd36a
+          name: 'Performance Concurrent SSL Sessions'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.296.0
+          key: sslCurSessions
+        -
+          uuid: 8191a092d9ae4b00a3af68ae46911328
+          name: 'SSL Engine Status'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.2.0
+          key: sslEngineStatus
+        -
+          uuid: 07411dedc543472e934cf69c0f549a9b
+          name: 'SSL Cards UP'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.299.0
+          key: sslNumCardsUP
+        -
+          uuid: e363bea4837c4c5ea6cd9d274a4d4037
+          name: 'SSL Secondary Cards Up'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.367.0
+          key: sslNumCardsUPSecondary
+        -
+          uuid: 12c3974e1328413aa8da4db3c4a48e89
+          name: 'Performance SSL TPS'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.47.333.0
+          key: sslTotTransactionsRate
+        -
+          uuid: d9b2c096328b448f96e481c69f7c4243
+          name: 'Hardware SystemFan1Speed'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.15.83.121.115.116.101.109.70.97.110.49.83.112.101.101.100
+          key: SystemFan1Speed
+        -
+          uuid: 02ead5971eaf4a148885de3d3e434556
+          name: 'Hardware SystemFan2Speed'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.15.83.121.115.116.101.109.70.97.110.50.83.112.101.101.100
+          key: SystemFan2Speed
+        -
+          uuid: c1d0145c8b6b4146baa9125bf8678c54
+          name: 'Hardware SystemFanSpeed'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.41.7.1.2.14.83.121.115.116.101.109.70.97.110.83.112.101.101.100
+          key: SystemFanSeed
+        -
+          uuid: 29205078717245188c4db9ea30d50dda
+          name: 'Performance TCP Established Connections(Client)'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.46.12.0
+          key: tcpCurClientConnEstablished
+        -
+          uuid: 18af99ca1f984ed5b1a7d37cbc5e9ab2
+          name: 'Performance TCP Established Connections(Server)'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.46.10.0
+          key: tcpCurServerConnEstablished
+        -
+          uuid: 17ad0af82bfd4a86a60a49c311f9e91a
+          name: 'Performance TCP CPS'
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.4.1.5951.4.1.1.46.89.0
+          key: tcpTotClientConnOpenRate
+      discovery_rules:
+        -
+          uuid: 230019a34c43471390b65c8f70e8465f
+          name: InterfaceName
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE}, .1.3.6.1.2.1.2.2.1.2]'
+          key: ifTable
+          item_prototypes:
+            -
+              uuid: 3f20ae1098c64c0a8ad0cf00362d8c04
+              name: 'Interface {#SNMPVALUE} AdminStatus'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.2.1.2.2.1.7.{#SNMPINDEX}'
+              key: 'ifAdminStatus.[{#SNMPVALUE}]'
+              valuemap:
+                name: AdminStatus
+            -
+              uuid: 7b9daeb0f4574a60a2ca7a415ae58e61
+              name: 'Interface {#SNMPVALUE} OperStatus'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}'
+              key: 'ifOperStatus.[{#SNMPVALUE}]'
+              valuemap:
+                name: OperStatus
+        -
+          uuid: a5cdd7e0ad614649adf6afe391dbbca7
+          name: CPUName
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},  .1.3.6.1.4.1.5951.4.1.1.41.6.1.1]'
+          key: nsCPUname
+          item_prototypes:
+            -
+              uuid: 27d33e6aa9d04ad3bcac3124fc6c440d
+              name: 'System {#SNMPVALUE} Usage'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.4.1.5951.4.1.1.41.6.1.2.{#SNMPINDEX}'
+              key: 'nsCPUusage.[{#SNMPVALUE}]'
+              units: '%'
+        -
+          uuid: e98d96dece194625ad1cb4be41e19a2f
+          name: PartitionName
+          type: SNMP_AGENT
+          snmp_oid: 'discovery[{#SNMPVALUE},  .1.3.6.1.4.1.5951.4.1.1.41.8.1.1]'
+          key: sysHealthDiskName
+          item_prototypes:
+            -
+              uuid: cb0f5e0ebd2e44eda697f62dded5df68
+              name: 'System DiskPartition  {#SNMPVALUE} Usage'
+              type: SNMP_AGENT
+              snmp_oid: '.1.3.6.1.4.1.5951.4.1.1.41.8.1.5.{#SNMPINDEX}'
+              key: 'sysHealthDiskPerusage.[{#SNMPVALUE}]'
+              units: '%'
+      valuemaps:
+        -
+          uuid: c2affc51ea324392a0ee7248698fbcc9
+          name: AdminStatus
+          mappings:
+            -
+              value: '1'
+              newvalue: up
+            -
+              value: '2'
+              newvalue: down
+            -
+              value: '3'
+              newvalue: testing
+        -
+          uuid: f9b4be6101d14f26b0c8e63130edda02
+          name: HAPeerStatus
+          mappings:
+            -
+              value: '0'
+              newvalue: standalone
+            -
+              value: '1'
+              newvalue: primary
+            -
+              value: '2'
+              newvalue: secondary
+            -
+              value: '3'
+              newvalue: unknown
+        -
+          uuid: a922e0e512164cd9ba86c257c5d71850
+          name: HAState
+          mappings:
+            -
+              value: '0'
+              newvalue: unknown
+            -
+              value: '1'
+              newvalue: init
+            -
+              value: '2'
+              newvalue: down
+            -
+              value: '3'
+              newvalue: up
+            -
+              value: '4'
+              newvalue: partialFail
+            -
+              value: '5'
+              newvalue: monitorFail
+            -
+              value: '6'
+              newvalue: monitorOk
+            -
+              value: '7'
+              newvalue: completeFail
+            -
+              value: '8'
+              newvalue: dumb
+            -
+              value: '9'
+              newvalue: disabled
+            -
+              value: '10'
+              newvalue: partilaFailSsl
+            -
+              value: '11'
+              newvalue: routeMonitorFail
+        -
+          uuid: 103ee87e1a164e16a6a7364af35375ad
+          name: HAStatus
+          mappings:
+            -
+              value: '0'
+              newvalue: 'no'
+            -
+              value: '1'
+              newvalue: 'yes'
+        -
+          uuid: 4c3946b2c13e4075aedfd382a1bfdfce
+          name: OperStatus
+          mappings:
+            -
+              value: '1'
+              newvalue: up
+            -
+              value: '2'
+              newvalue: down
+            -
+              value: '3'
+              newvalue: testing
+            -
+              value: '4'
+              newvalue: unknown
+            -
+              value: '5'
+              newvalue: dormant
+            -
+              value: '6'
+              newvalue: notPresent
+            -
+              value: '7'
+              newvalue: lowLayerDown
