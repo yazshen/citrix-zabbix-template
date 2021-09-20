@@ -1,4 +1,4 @@
-# Zabbix Template for Citrix Products
+# Zabbix Template for Citrix Network Product
 
 ## Author
 Name: Yazhong(Robbie) Shen
