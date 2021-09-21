@@ -12,7 +12,7 @@ https://github.com/yazshen/citrix-zabbix-template/blob/main/citrix_sdwan_templat
 #### 1.1 Requirement
 Zabbix 5.4.x
 
-#### 1.2 Support
+#### 1.2 Supported Items
 System:
 + CPU Usage
 + Memory Usage
@@ -31,7 +31,7 @@ https://github.com/yazshen/citrix-zabbix-template/blob/main/citrix_adc_temlate_v
 #### 2.1 Requirement
 Zabbix 5.4.x
 
-#### 2.2 Support
+#### 2.2 Supported Items
 System Usage
 + Mgmt CPU Usage
 + Packet CPU Usage
