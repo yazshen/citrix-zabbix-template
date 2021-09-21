@@ -58,6 +58,8 @@ Performance
 + Concurrent TCP Connections(Server)
 + Concurrent TCP Connections(Client)
 + Concurrent SSL Sessions
++ Throughput In(Mbps)
++ Throughput Out(Mbps)
 
 SSL
 + SSL Card
